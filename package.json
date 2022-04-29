@@ -1,0 +1,61 @@
+{
+  "name": "file-viewer",
+  "version": "0.0.4",
+  "description": "A rewrite of react-file-viewer",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress",
+    "lint": "eslint --fix src --ext .js,.jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-Potek/file-viewer.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/e-Potek/file-viewer/issues"
+  },
+  "homepage": "https://github.com/e-Potek/file-viewer#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "autoprefixer": "^10.4.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "buffer": "^6.0.3",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "node-sass": "^7.0.1",
+    "path-browserify": "^1.0.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "util": "^0.12.4",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.9",
+    "@mui/material": "^5.6.3",
+    "@mui/x-data-grid": "^5.10.0",
+    "mammoth": "^1.4.21",
+    "papaparse": "^5.3.2",
+    "pdfjs-dist": "^2.13.216",
+    "prop-types": "^15.8.1",
+    "react-intersection-observer": "^9.1.0",
+    "xlsx": "^0.18.5"
+  }
+}
