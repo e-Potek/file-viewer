@@ -1,6 +1,6 @@
 {
-  "name": "file-viewer",
-  "version": "0.0.4",
+  "name": "@gabrielcazacu96/file-viewer",
+  "version": "0.0.1",
   "description": "A rewrite of react-file-viewer",
   "main": "dist/index.js",
   "module": "dist/index.js",

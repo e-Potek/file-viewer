@@ -1,14 +1,18 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const BUILD_DIR = path.resolve(__dirname, './dist');
 const APP_DIR = path.resolve(__dirname, './src');
 
 const config = {
-  entry: APP_DIR,
+  entry: {
+    index: APP_DIR,
+    'pdf.worker.entry': path.join(__dirname, './node_modules/pdfjs-dist/build/pdf.worker.entry.js'),
+  },
   output: {
     path: BUILD_DIR,
-    filename: 'index.js',
-    library: ['FileViewer'],
+    filename: "[name].js",
+    library: '@gabrielcazacu96/file-viewer',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -65,6 +69,14 @@ const config = {
       },
     ],
   },
+  plugins: [
+    new webpack.NormalModuleReplacementPlugin(
+        /^pdfjs-dist$/,
+        resource => {
+          resource.request = path.join(__dirname, './node_modules/pdfjs-dist/webpack');
+        },
+    ),
+  ],
 };
 
 module.exports = config;
