@@ -7,7 +7,7 @@ const setPdfWorkerSrc = (worker) => {
 
 export {
   FileViewer,
-  setPdfWorkerSrc
+  setPdfWorkerSrc,
 };
 
 export default FileViewer;
