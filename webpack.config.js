@@ -1,5 +1,4 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
 
 const BUILD_DIR = path.resolve(__dirname, './dist');
 const APP_DIR = path.resolve(__dirname, './src');
@@ -18,7 +17,8 @@ const config = {
     fallback: {
       buffer: require.resolve("buffer"),
       util: require.resolve("util"),
-      path: require.resolve("path-browserify")
+      path: require.resolve("path-browserify"),
+      stream: require.resolve("stream-browserify")
     },
   },
   externals: [

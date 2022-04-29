@@ -26,7 +26,6 @@
     "@babel/preset-react": "^7.16.7",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "autoprefixer": "^10.4.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "buffer": "^6.0.3",
@@ -56,6 +55,7 @@
     "pdfjs-dist": "^2.13.216",
     "prop-types": "^15.8.1",
     "react-intersection-observer": "^9.1.0",
+    "stream-browserify": "^3.0.0",
     "xlsx": "^0.18.5"
   }
 }
