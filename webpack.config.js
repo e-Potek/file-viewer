@@ -7,7 +7,7 @@ const APP_DIR = path.resolve(__dirname, './src');
 const config = {
   entry: {
     index: APP_DIR,
-    'pdf.worker.entry': path.join(__dirname, './node_modules/pdfjs-dist/build/pdf.worker.entry.js'),
+    'pdf.worker': path.join(__dirname, './node_modules/pdfjs-dist/build/pdf.worker.js'),
   },
   output: {
     path: BUILD_DIR,
