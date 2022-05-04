@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Error.scss';
 
-function Error({ errorComponent, ...props }) {
+function Error({ ErrorComponent, ...props }) {
   return (
     <div className="error-message">
-      {errorComponent ? (
-        <errorComponent {...props} />
+      {ErrorComponent ? (
+        <ErrorComponent {...props} />
       ) : (
         <p className="alert">Unable to preview file</p>
       )}
@@ -15,11 +15,11 @@ function Error({ errorComponent, ...props }) {
 }
 
 Error.propTypes = {
-  errorComponent: PropTypes.element,
+  ErrorComponent: PropTypes.element,
 };
 
 Error.defaultProps = {
-  errorComponent: null,
+  ErrorComponent: null,
 };
 
 export default Error;

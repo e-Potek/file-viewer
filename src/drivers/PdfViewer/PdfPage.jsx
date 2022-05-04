@@ -21,9 +21,11 @@ export default function PDFPage({
   const [pageState, setPageState] = useState(PAGE_STATES.BLANK);
   const [isVisible, setIsVisible] = useState(false);
 
-  const renderPage = (page) => {
-    const calculatedScale = containerWidth / page.getViewport({ scale: DEFAULT_SCALE }).width;
-    const scale = calculatedScale > DEFAULT_SCALE ? DEFAULT_SCALE : calculatedScale;
+  const renderPage = page => {
+    const calculatedScale =
+      containerWidth / page.getViewport({ scale: DEFAULT_SCALE }).width;
+    const scale =
+      calculatedScale > DEFAULT_SCALE ? DEFAULT_SCALE : calculatedScale;
     const viewport = page.getViewport({ scale });
 
     const context = canvasRef.current.getContext('2d');
@@ -42,7 +44,7 @@ export default function PDFPage({
     return renderTask.promise;
   };
 
-  const onVisibilityChange = (value) => (value ? setIsVisible(value) : null);
+  const onVisibilityChange = value => (value ? setIsVisible(value) : null);
 
   useEffect(() => {
     if ([PAGE_STATES.LOADING, PAGE_STATES.RENDERED].includes(pageState)) {
@@ -68,12 +70,12 @@ export default function PDFPage({
     throw error;
   }
 
-  const canvas = <canvas ref={canvasRef} width="670" height="870" />;
+  const canvas = <canvas ref={canvasRef} />;
 
   return (
     <div className="pdf-canvas">
       {disableVisibilityCheck ? (
-        { canvas }
+        canvas
       ) : (
         <InView onChange={onVisibilityChange}>{canvas}</InView>
       )}
@@ -82,9 +84,9 @@ export default function PDFPage({
 }
 
 PDFPage.propTypes = {
+  containerWidth: PropTypes.number.isRequired,
   disableVisibilityCheck: PropTypes.bool,
   index: PropTypes.number.isRequired,
-  containerWidth: PropTypes.number.isRequired,
   pdf: PropTypes.shape({
     getPage: PropTypes.func.isRequired,
   }).isRequired,

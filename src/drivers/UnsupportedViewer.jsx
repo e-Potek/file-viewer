@@ -2,17 +2,15 @@ import React from 'react';
 import './UnsupportedViewer.scss';
 import PropTypes from 'prop-types';
 
-function UnsupportedViewer({ unsupportedComponent, ...rest }) {
+function UnsupportedViewer({ UnsupportedComponent, ...rest }) {
   return (
     <div className="unsupported-viewer">
       <div className="message">
-        {unsupportedComponent ? (
-          <unsupportedComponent {...rest} />
+        {UnsupportedComponent ? (
+          <UnsupportedComponent {...rest} />
         ) : (
           <p className="alert">
-            <b>{`.${rest.fileType}`}</b>
-            {' '}
-            is not supported.
+            <b>{`.${rest.fileType}`}</b> is not supported.
           </p>
         )}
       </div>
@@ -21,11 +19,11 @@ function UnsupportedViewer({ unsupportedComponent, ...rest }) {
 }
 
 UnsupportedViewer.propTypes = {
-  unsupportedComponent: PropTypes.element,
+  UnsupportedComponent: PropTypes.element,
 };
 
 UnsupportedViewer.defaultProps = {
-  unsupportedComponent: null,
+  UnsupportedComponent: null,
 };
 
 export default UnsupportedViewer;

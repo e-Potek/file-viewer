@@ -52,7 +52,7 @@ function FileViewer({ fileType, onError, ...props }) {
 
   return (
     <div className="react-file-viewer-container">
-      <div ref={(newRef) => setRef(newRef)} className="react-file-viewer">
+      <div ref={newRef => setRef(newRef)} className="react-file-viewer">
         <ErrorBoundary onError={onError}>
           <Driver {...props} {...dimensions} />
         </ErrorBoundary>
@@ -65,12 +65,12 @@ FileViewer.propTypes = {
   filePath: PropTypes.string.isRequired,
   fileType: PropTypes.string.isRequired,
   onError: PropTypes.func,
-  unsupportedComponent: PropTypes.element,
+  UnsupportedComponent: PropTypes.element,
 };
 
 FileViewer.defaultProps = {
   onError: () => null,
-  unsupportedComponent: null,
+  UnsupportedComponent: null,
 };
 
 export default FileViewer;

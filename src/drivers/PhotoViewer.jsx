@@ -1,5 +1,6 @@
 import React, { useRef, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
+import path from 'path';
 import './PhotoViewer.scss';
 
 function PhotoViewer({ filePath, height, width }) {
@@ -11,7 +12,8 @@ function PhotoViewer({ filePath, height, width }) {
 
   const dimensions = useMemo(() => {
     // Scale image to fit into viewer
-    const { width: naturalWidth, height: naturalHeight } = imageOriginalDimensions;
+    const { width: naturalWidth, height: naturalHeight } =
+      imageOriginalDimensions;
     let imgHeight;
     let imgWidth;
 
@@ -42,18 +44,20 @@ function PhotoViewer({ filePath, height, width }) {
         style={
           dimensions.width && dimensions.height
             ? {
-              width: `${dimensions.width}px`,
-              height: `${dimensions.height}px`,
-            }
+                width: `${dimensions.width}px`,
+                height: `${dimensions.height}px`,
+              }
             : { visibility: 'hidden' }
         }
         ref={imageRef}
         src={filePath}
-        alt={filePath}
-        onLoad={() => setImageOriginalDimensions({
-          width: imageRef.current.width,
-          height: imageRef.current.height,
-        })}
+        alt={path.parse(filePath).base}
+        onLoad={() =>
+          setImageOriginalDimensions({
+            width: imageRef.current.width,
+            height: imageRef.current.height,
+          })
+        }
       />
     </div>
   );

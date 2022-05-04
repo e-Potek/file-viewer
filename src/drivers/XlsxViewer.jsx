@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 import Csv from './Csv';
 import { useFetch, RESPONSE_REPRESENTATIONS } from '../components';
 
-const parseXlxsData = (data) => {
+const parseXlxsData = data => {
   const workbook = XLSX.read(new Uint8Array(data), {
     type: 'array',
   });
   const names = Object.keys(workbook.Sheets);
-  const sheets = names.map((name) => XLSX.utils.sheet_to_csv(workbook.Sheets[name], {
-    blankrows: false,
-  }));
+  const sheets = names.map(name =>
+    XLSX.utils.sheet_to_csv(workbook.Sheets[name], {
+      blankrows: false,
+    }),
+  );
 
   return { sheets, names };
 };
@@ -33,7 +35,7 @@ function XlxsViewer({ filePath }) {
     }
 
     return parseXlxsData(result);
-  }, [result]);
+  }, [result, isLoading]);
 
   return (
     <div className="xlsx-viewer">
