@@ -7,11 +7,14 @@ const APP_DIR = path.resolve(__dirname, './src');
 const config = {
   entry: {
     index: APP_DIR,
-    'pdf.worker': path.join(__dirname, './node_modules/pdfjs-dist/build/pdf.worker.js'),
+    'pdf.worker': path.join(
+      __dirname,
+      './node_modules/pdfjs-dist/build/pdf.worker.js',
+    ),
   },
   output: {
     path: BUILD_DIR,
-    filename: "[name].js",
+    filename: '[name].js',
     library: '@gabrielcazacu96/file-viewer',
     libraryTarget: 'umd',
   },
@@ -19,10 +22,10 @@ const config = {
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
     extensions: ['.js', '.jsx', '.json'],
     fallback: {
-      buffer: require.resolve("buffer"),
-      util: require.resolve("util"),
-      path: require.resolve("path-browserify"),
-      stream: require.resolve("stream-browserify")
+      buffer: require.resolve('buffer'),
+      util: require.resolve('util'),
+      path: require.resolve('path-browserify'),
+      stream: require.resolve('stream-browserify'),
     },
   },
   externals: [
@@ -70,12 +73,12 @@ const config = {
     ],
   },
   plugins: [
-    new webpack.NormalModuleReplacementPlugin(
-        /^pdfjs-dist$/,
-        resource => {
-          resource.request = path.join(__dirname, './node_modules/pdfjs-dist/webpack');
-        },
-    ),
+    new webpack.NormalModuleReplacementPlugin(/^pdfjs-dist$/, resource => {
+      resource.request = path.join(
+        __dirname,
+        './node_modules/pdfjs-dist/webpack',
+      );
+    }),
   ],
 };
 
