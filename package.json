@@ -1,6 +1,6 @@
 {
   "name": "@resolve_ch/file-viewer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A rewrite of react-file-viewer",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -27,6 +27,7 @@
     "@babel/preset-react": "^7.16.7",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.6.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^4.1.0",
@@ -42,9 +43,9 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "node-sass": "^7.0.1",
     "path-browserify": "^1.0.1",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
     "prettier": "^2.6.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
     "util": "^0.12.4",
@@ -52,12 +53,12 @@
     "webpack-cli": "^4.9.2"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "@mui/material": "^5.6.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "@mui/material": "^5.6.3",
     "@mui/x-data-grid": "^5.10.0",
     "mammoth": "^1.4.21",
     "papaparse": "^5.3.2",

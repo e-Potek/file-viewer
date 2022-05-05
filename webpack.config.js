@@ -45,6 +45,7 @@ const config = {
         amd: 'react-dom',
       },
     },
+    /@mui\/material\/.*/,
   ],
   module: {
     rules: [
