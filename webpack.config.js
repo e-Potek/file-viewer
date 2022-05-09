@@ -5,6 +5,8 @@ const BUILD_DIR = path.resolve(__dirname, './dist');
 const APP_DIR = path.resolve(__dirname, './src');
 
 const config = {
+  mode: 'production',
+  devtool: 'source-map',
   entry: {
     index: APP_DIR,
     'pdf.worker': path.join(
@@ -15,7 +17,7 @@ const config = {
   output: {
     path: BUILD_DIR,
     filename: '[name].js',
-    library: '@gabrielcazacu96/file-viewer',
+    library: '@resolve_ch/file-viewer',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -29,22 +31,8 @@ const config = {
     },
   },
   externals: [
-    {
-      react: {
-        root: 'React',
-        commonjs2: 'react',
-        commonjs: 'react',
-        amd: 'react',
-      },
-    },
-    {
-      'react-dom': {
-        root: 'ReactDOM',
-        commonjs2: 'react-dom',
-        commonjs: 'react-dom',
-        amd: 'react-dom',
-      },
-    },
+    'react',
+    'react-dom',
     /@mui\/material\/.*/,
   ],
   module: {

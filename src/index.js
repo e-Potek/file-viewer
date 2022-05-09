@@ -1,5 +1,5 @@
-import * as pdfjsLib from 'pdfjs-dist/build/pdf';
-import pdfWorker from 'pdfjs-dist/build/pdf.worker.entry';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
+import pdfWorker from 'pdfjs-dist/legacy/build/pdf.worker.entry';
 import FileViewer from './FileViewer';
 
 const setPdfWorkerSrc = worker => {

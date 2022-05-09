@@ -1,6 +1,6 @@
 {
   "name": "@resolve_ch/file-viewer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A rewrite of react-file-viewer",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/e-Potek/file-viewer#readme",
   "devDependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.0.0",
     "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
@@ -28,10 +28,10 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.6.4",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.2.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "buffer": "^6.0.3",
+    "core-js": "^3.22.4",
     "css-loader": "^6.7.1",
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -67,5 +67,10 @@
     "react-intersection-observer": "^9.1.0",
     "stream-browserify": "^3.0.0",
     "xlsx": "^0.18.5"
-  }
+  },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "not ie < 9"
+  ]
 }
