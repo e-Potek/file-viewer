@@ -1,0 +1,12 @@
+.react-file-viewer-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+
+  .react-file-viewer {
+    height: 100%;
+    position: relative;
+    flex-grow: 2;
+  }
+}
