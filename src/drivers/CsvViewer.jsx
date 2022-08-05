@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Csv from './Csv';
 
+import Csv from './Csv';
 import { useFetch } from '../components';
 
 function CsvViewer({ filePath }) {

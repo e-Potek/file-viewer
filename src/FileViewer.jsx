@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
+
 import './FileViewer.scss';
 import {
   CsvViewer,
@@ -11,7 +12,7 @@ import {
 } from './drivers';
 import { ErrorBoundary } from './components';
 
-function FileViewer({ fileType, onError, ...props }) {
+function FileViewer({ onError, ...props }) {
   const [ref, setRef] = useState(null);
   const dimensions = useMemo(
     () => ({
@@ -22,7 +23,7 @@ function FileViewer({ fileType, onError, ...props }) {
   );
 
   const getDriver = () => {
-    switch (fileType) {
+    switch (props.fileType) {
       case 'csv': {
         return CsvViewer;
       }

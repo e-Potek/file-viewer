@@ -1,6 +1,7 @@
 import React, { useRef, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import path from 'path';
+
 import './PhotoViewer.scss';
 
 function PhotoViewer({ filePath, height, width }) {

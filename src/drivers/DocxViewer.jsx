@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import mammoth from 'mammoth';
 import PropTypes from 'prop-types';
+
 import './DocxViewer.scss';
 import { RESPONSE_REPRESENTATIONS, useFetch } from '../components';
 

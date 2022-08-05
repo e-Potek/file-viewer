@@ -1,6 +1,7 @@
 import React from 'react';
-import './UnsupportedViewer.scss';
 import PropTypes from 'prop-types';
+
+import './UnsupportedViewer.scss';
 
 function UnsupportedViewer({ UnsupportedComponent, ...rest }) {
   return (
