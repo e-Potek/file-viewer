@@ -12,50 +12,54 @@ import {
 } from './drivers';
 import { ErrorBoundary } from './components';
 
-function FileViewer({ onError, ...props }) {
+const defaultDrivers = {
+  bmp: PhotoViewer,
+  csv: CsvViewer,
+  docx: DocxViewer,
+  gif: PhotoViewer,
+  jpeg: PhotoViewer,
+  jpg: PhotoViewer,
+  pdf: PDFViewer,
+  png: PhotoViewer,
+  xlsx: XlsxViewer,
+};
+
+function FileViewer({
+  drivers: driversInput = {},
+  fileType: fileTypeInput,
+  onError,
+  ErrorComponent,
+  ...props
+}) {
+  const fileType =
+    props.filePath?.split(/[#?]/)[0].split('.').pop().trim() || fileTypeInput;
   const [ref, setRef] = useState(null);
-  const dimensions = useMemo(
+  const viewerDimensions = useMemo(
     () => ({
       width: ref?.clientWidth || 0,
       height: ref?.clientHeight || 0,
     }),
     [ref?.clientWidth, ref?.clientHeight],
   );
-
-  const getDriver = () => {
-    switch (props.fileType) {
-      case 'csv': {
-        return CsvViewer;
-      }
-      case 'xlsx': {
-        return XlsxViewer;
-      }
-      case 'jpg':
-      case 'jpeg':
-      case 'gif':
-      case 'bmp':
-      case 'png': {
-        return PhotoViewer;
-      }
-      case 'pdf': {
-        return PDFViewer;
-      }
-      case 'docx': {
-        return DocxViewer;
-      }
-      default: {
-        return UnsupportedViewer;
-      }
-    }
+  const drivers = {
+    ...defaultDrivers,
+    ...driversInput,
   };
 
-  const Driver = getDriver();
+  const Driver = drivers[fileType] || UnsupportedViewer;
 
   return (
     <div className="react-file-viewer-container">
       <div ref={newRef => setRef(newRef)} className="react-file-viewer">
-        <ErrorBoundary onError={onError}>
-          <Driver {...props} {...dimensions} />
+        <ErrorBoundary
+          onError={onError}
+          {...(ErrorComponent ? { ErrorComponent } : {})}
+        >
+          <Driver
+            {...props}
+            fileType={fileType}
+            viewerDimensions={viewerDimensions}
+          />
         </ErrorBoundary>
       </div>
     </div>
@@ -63,6 +67,8 @@ function FileViewer({ onError, ...props }) {
 }
 
 FileViewer.propTypes = {
+  drivers: PropTypes.object,
+  ErrorComponent: PropTypes.element,
   filePath: PropTypes.string.isRequired,
   fileType: PropTypes.string.isRequired,
   onError: PropTypes.func,
@@ -70,6 +76,8 @@ FileViewer.propTypes = {
 };
 
 FileViewer.defaultProps = {
+  drivers: {},
+  ErrorComponent: null,
   onError: () => null,
   UnsupportedComponent: null,
 };

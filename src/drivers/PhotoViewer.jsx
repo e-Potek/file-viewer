@@ -4,7 +4,8 @@ import path from 'path';
 
 import './PhotoViewer.scss';
 
-function PhotoViewer({ filePath, height, width }) {
+function PhotoViewer({ filePath, viewerDimensions }) {
+  const { height, width } = viewerDimensions;
   const imageRef = useRef(null);
   const [imageOriginalDimensions, setImageOriginalDimensions] = useState({
     width: null,
