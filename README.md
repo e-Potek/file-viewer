@@ -45,17 +45,19 @@ ReactDOM.render(<App/>, document.body);
   // By default, the extension of the filePath is used to determine the fileType, but it can be overwritten using this prop.
   fileType: string [optional]
   
-  // Can be used to extend the file-viwer or overwrite the existing drivers, eg: '{ mp4: VideoPlayerViewer }'
+  // Can be used to extend the file-viwer or overwrite the existing drivers,
+  // format: '{ [key: string]: React.Component<props: { filePath: string, fileType: string }> }'
+  // eg: '{ mp4: VideoPlayerViewer }'
   drivers: object [optional]
 
   // Called when an error is thrown due to fetching or rendering problems
-  onError: function [optional]
+  onError: function<error: Error, errorInfo: React.ErrorInfo> [optional]
   
   // A component to render in case the file format is not supported.
-  UnsupportedComponent: ReactElement [optional]
+  UnsupportedComponent: ReactElement<props: { filePath: string, fileType: string }> [optional]
   
   // A component to render in case an error is thrown
-  ErrorComponent: ReactElement [optional]
+  ErrorComponent: ReactElement<props: { error: Error }> [optional]
 }
 ```
 ### Local development
