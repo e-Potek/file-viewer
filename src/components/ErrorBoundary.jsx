@@ -19,10 +19,10 @@ export default class ErrorBoundary extends Component {
 
   render() {
     const { error } = this.state;
-    const { children } = this.props;
+    const { children, ErrorComponent } = this.props;
 
     if (error) {
-      return <Error error={error} />;
+      return <ErrorComponent error={error} />;
     }
 
     return children;
@@ -31,9 +31,11 @@ export default class ErrorBoundary extends Component {
 
 ErrorBoundary.propTypes = {
   children: PropTypes.node.isRequired,
+  ErrorComponent: PropTypes.element,
   onError: PropTypes.func,
 };
 
 ErrorBoundary.defaultProps = {
+  ErrorComponent: Error,
   onError: () => null,
 };
