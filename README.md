@@ -1,4 +1,4 @@
-## file-viewer
+# file-viewer
 
 Supported file formats:
 - bmp
@@ -11,12 +11,12 @@ Supported file formats:
 - png
 - xlsx
 
-### Install
+## Install
 ```
 # via npm
 npm install @resolve_ch/file-viewer
 ```
-### FileViewer example
+## FileViewer example
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -34,7 +34,7 @@ class App extends React.Component {
 
 ReactDOM.render(<App/>, document.body);
 ```
-### FileViewer props
+## FileViewer props
 ```
 {
   // The url of the resource to be shown by the FileViewer.
@@ -60,8 +60,15 @@ ReactDOM.render(<App/>, document.body);
   ErrorComponent: ReactElement<props: { error: Error }> [optional]
 }
 ```
-### Local development
+## Local development
 There is a demo app built into this library that can be used for development purposes.
 ```
 npm run dev
 ```
+
+## Publish a new version
+
+Log in to npm if not already done with `npm login`, your account needs to be on the `@resolve_ch` org.
+
+* `npm run build`
+* `npm publish`
