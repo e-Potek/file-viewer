@@ -1,5 +1,7 @@
-import './FileViewer.scss';
+import React, { useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
 
+import './FileViewer.scss';
 import {
   CsvViewer,
   DocxViewer,
@@ -8,10 +10,7 @@ import {
   UnsupportedViewer,
   XlsxViewer,
 } from './drivers';
-import React, { useMemo, useState } from 'react';
-
 import { ErrorBoundary } from './components';
-import PropTypes from 'prop-types';
 
 const defaultDrivers = {
   bmp: PhotoViewer,
@@ -33,7 +32,8 @@ function FileViewer({
   ...props
 }) {
   const fileType =
-    props.filePath?.split(/[#?]/)[0].split('.').pop().trim().toLowerCase() || fileTypeInput;
+    fileTypeInput ||
+    props.filePath?.split(/[#?]/)[0].split('.').pop().trim().toLowerCase();
   const [ref, setRef] = useState(null);
   const viewerDimensions = useMemo(
     () => ({

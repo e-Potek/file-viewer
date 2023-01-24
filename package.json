@@ -1,6 +1,6 @@
 {
   "name": "@resolve_ch/file-viewer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A rewrite of react-file-viewer",
   "main": "dist/index.js",
   "module": "dist/index.js",
