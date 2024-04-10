@@ -1,6 +1,6 @@
 {
   "name": "@resolve_ch/file-viewer",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "A rewrite of react-file-viewer",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -50,8 +50,8 @@
     "node-sass": "^7.0.1",
     "path-browserify": "^1.0.1",
     "prettier": "^2.7.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
     "util": "^0.12.4",
@@ -61,8 +61,8 @@
     "webpack-merge": "^5.8.0"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@mui/material": "^5.5.1"
   },
   "dependencies": {
