@@ -33,7 +33,8 @@ function FileViewer({
   ...props
 }) {
   const fileType =
-    props.filePath?.split(/[#?]/)[0].split('.').pop().trim().toLowerCase() || fileTypeInput;
+    fileTypeInput ||
+    props.filePath?.split(/[#?]/)[0].split('.').pop().trim().toLowerCase();
   const [ref, setRef] = useState(null);
   const viewerDimensions = useMemo(
     () => ({
