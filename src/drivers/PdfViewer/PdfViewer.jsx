@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
+import * as pdfjsLib from 'pdfjs-dist';
 import PropTypes from 'prop-types';
 
 import PdfPage from './PdfPage';

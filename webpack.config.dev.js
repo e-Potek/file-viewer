@@ -7,11 +7,14 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
-  entry: [
-    'webpack-dev-server/client?http://localhost:8081/',
-    'webpack/hot/dev-server',
-    path.resolve(__dirname, './src/dev/app.js'),
-  ],
+  entry: {
+    main: [
+      'webpack-dev-server/client?http://localhost:8081/',
+      'webpack/hot/dev-server',
+      path.resolve(__dirname, './src/dev/app.js'),
+    ],
+    'pdf.worker': 'pdfjs-dist/build/pdf.worker.mjs',
+  },
   devServer: {
     open: true,
     port: 8081,

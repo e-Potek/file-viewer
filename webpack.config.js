@@ -11,10 +11,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   entry: {
     index: APP_DIR,
-    'pdf.worker': path.join(
-      __dirname,
-      './node_modules/pdfjs-dist/build/pdf.worker.js',
-    ),
+    'pdf.worker': 'pdfjs-dist/build/pdf.worker.mjs',
   },
   externals: ['react', 'react-dom', /@mui\/material\/.*/],
   output: {

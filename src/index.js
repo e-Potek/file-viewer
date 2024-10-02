@@ -1,12 +1,11 @@
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
-import pdfWorker from 'pdfjs-dist/legacy/build/pdf.worker.entry';
+import * as pdfjsLib from 'pdfjs-dist';
 import FileViewer from './FileViewer';
 
 const setPdfWorkerSrc = worker => {
   pdfjsLib.GlobalWorkerOptions.workerSrc = worker;
 };
 
-setPdfWorkerSrc(pdfWorker);
+setPdfWorkerSrc('./pdf.worker.js');
 
 export { FileViewer, setPdfWorkerSrc };
 
