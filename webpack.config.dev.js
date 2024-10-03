@@ -13,7 +13,6 @@ module.exports = merge(common, {
       'webpack/hot/dev-server',
       path.resolve(__dirname, './src/dev/app.js'),
     ],
-    'pdf.worker': 'pdfjs-dist/build/pdf.worker.mjs',
   },
   devServer: {
     open: true,
@@ -41,6 +40,12 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/dev/index.html'),
+    }),
+    new webpack.NormalModuleReplacementPlugin(/^pdfjs-dist$/, resource => {
+      resource.request = path.join(
+          __dirname,
+          './node_modules/pdfjs-dist/webpack.mjs',
+      );
     }),
   ],
 });
