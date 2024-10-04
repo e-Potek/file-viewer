@@ -1,6 +1,6 @@
 {
   "name": "@resolve_ch/file-viewer",
-  "version": "0.0.8",
+  "version": "0.1.2",
   "description": "A rewrite of react-file-viewer",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -55,7 +55,7 @@
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
     "util": "^0.12.4",
-    "webpack": "^5.74.0",
+    "webpack": "^5.89.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.3",
     "webpack-merge": "^5.8.0"
@@ -70,7 +70,7 @@
     "@mui/x-data-grid": "^5.15.1",
     "mammoth": "^1.4.21",
     "papaparse": "^5.3.2",
-    "pdfjs-dist": "^2.15.349",
+    "pdfjs-dist": "^4.6.82",
     "prop-types": "^15.8.1",
     "react-intersection-observer": "^9.4.0",
     "stream-browserify": "^3.0.0",

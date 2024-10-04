@@ -7,11 +7,13 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
-  entry: [
-    'webpack-dev-server/client?http://localhost:8081/',
-    'webpack/hot/dev-server',
-    path.resolve(__dirname, './src/dev/app.js'),
-  ],
+  entry: {
+    main: [
+      'webpack-dev-server/client?http://localhost:8081/',
+      'webpack/hot/dev-server',
+      path.resolve(__dirname, './src/dev/app.js'),
+    ],
+  },
   devServer: {
     open: true,
     port: 8081,
@@ -38,6 +40,12 @@ module.exports = merge(common, {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src/dev/index.html'),
+    }),
+    new webpack.NormalModuleReplacementPlugin(/^pdfjs-dist$/, resource => {
+      resource.request = path.join(
+          __dirname,
+          './node_modules/pdfjs-dist/webpack.mjs',
+      );
     }),
   ],
 });

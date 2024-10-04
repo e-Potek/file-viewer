@@ -39,11 +39,5 @@ module.exports = {
     new webpack.ProvidePlugin({
       Buffer: ['buffer', 'Buffer'],
     }),
-    new webpack.NormalModuleReplacementPlugin(/^pdfjs-dist$/, resource => {
-      resource.request = path.join(
-        __dirname,
-        './node_modules/pdfjs-dist/webpack',
-      );
-    }),
   ],
 };
