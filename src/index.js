@@ -1,14 +1,14 @@
-import * as pdfjs from 'pdfjs-dist';
+import * as pdfjsLib from 'pdfjs-dist';
 import FileViewer from './FileViewer';
 
 const setWorkerPort = workerPort => {
-  pdfjs.GlobalWorkerOptions.workerPort = workerPort;
+  pdfjsLib.GlobalWorkerOptions.workerPort = workerPort;
 };
 
 const setWorkerSrc = workerSrc => {
-  pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = workerSrc;
 };
 
-export { FileViewer, setWorkerSrc, setWorkerPort, pdfjs };
+export { FileViewer, setWorkerSrc, setWorkerPort, pdfjsLib };
 
 export default FileViewer;
